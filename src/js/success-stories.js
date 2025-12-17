@@ -52,8 +52,7 @@ export function renderStories(stories) {
   const ul = document.querySelector('.swiper-wrapper');
   const li = stories
     .map(
-      story =>
-        `<li class="swiper-slide" id="${story._id}">       
+      story => `<li class="swiper-slide" id="${story._id}">       
       <div class="story-card">
       <div class="stories-rate" data-rate="${story.rate}"></div>
       <p class="stories-descr">${story.description}</p>

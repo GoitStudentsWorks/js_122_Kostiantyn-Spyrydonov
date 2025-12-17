@@ -14,6 +14,5 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import Raty from 'raty-js';
 
 // Success stories //
-import { fetchStories, renderStories } from './js/success-stories';
+import { fetchStories } from './js/success-stories';
 fetchStories();
-renderStories();
