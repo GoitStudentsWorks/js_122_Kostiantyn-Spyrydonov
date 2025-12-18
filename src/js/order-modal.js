@@ -19,6 +19,7 @@ function closeOrderModal() {
   backdrop.classList.remove('is-open');
   document.body.classList.remove('modal-open');
   currentAnimalId = null;
+  form.classList.remove('was-submitted');
 }
 
 closeBtn.addEventListener('click', closeOrderModal);
