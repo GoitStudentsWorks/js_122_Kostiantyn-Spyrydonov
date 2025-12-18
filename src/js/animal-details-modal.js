@@ -26,15 +26,13 @@ backdrop.addEventListener('click', e => {
   if (e.target === backdrop) closePetModal();
 });
 
-closeBtn.addEventListener('click', closePetModal);
-
 function createModalMarkup(animal) {
   return `
     <div class="modal-body">
       <img src="${animal.image}" alt="${animal.name}" class="modal-img"/>
 
       <div class="modal-info">
-        <p class="modal-category">${animal.category}</p>
+        <p class="modal-category">${animal.species}</p>
         <h2 class="modal-name">${animal.name}</h2>
         <p class="modal-meta">${animal.age} · ${animal.sex}</p>
 
@@ -56,8 +54,13 @@ function createModalMarkup(animal) {
 }
 
 content.addEventListener('click', e => {
-  if (!e.target.closest('[data-adopt]')) return;
+  if (e.target.closest('[data-modal-close]')) {
+    closePetModal();
+    return;
+  }
 
-  closePetModal();
-  openApplicationModal(); // наступна модалка
+  if (e.target.closest('[data-adopt]')) {
+    closePetModal();
+    openApplicationModal();
+  }
 });
