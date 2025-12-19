@@ -108,6 +108,9 @@ initAboutSlider();
 import { initFaq } from './js/FAQ.js';
 initFaq();
 
+
 // Success stories //
+import './js/animal-details-modal';
+
 import { fetchStories } from './js/success-stories.js';
 fetchStories();
