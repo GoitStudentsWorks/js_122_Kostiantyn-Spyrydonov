@@ -13,6 +13,7 @@ import Raty from 'raty-js';
 const mobileMenu = document.querySelector(".mobile-menu");
 const burgerButton = document.querySelector(".burger-button");
 const closeButton = document.querySelector(".close-button");
+const menuContainer = document.querySelector(".menu-container");
 
 if (mobileMenu && burgerButton && closeButton) {
   const toggleMenu = () => {
@@ -21,9 +22,17 @@ if (mobileMenu && burgerButton && closeButton) {
   };
   burgerButton.addEventListener("click", toggleMenu);
   closeButton.addEventListener("click", toggleMenu);
+  
+  menuContainer.addEventListener("click", (e) => {
+    if (e.target.nodeName === "A" || "menu-take-div") {
+      toggleMenu();
+    }
+  });
+  
   mobileMenu.addEventListener("click", (e) => {
     if (e.target === mobileMenu) toggleMenu();
   });
+  
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
       toggleMenu();
