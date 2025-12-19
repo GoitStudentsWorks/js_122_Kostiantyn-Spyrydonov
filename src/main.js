@@ -32,7 +32,6 @@ if (mobileMenu && burgerButton && closeButton) {
 }
 
 /* Pets List */
-/* Pets List */
 import { fetchCategories, fetchAnimals } from './js/pets-list-api.js';
 import { renderFilters, renderAnimals } from './js/pets-list-render.js';
 import { openPetModal } from './js/animal-details-modal.js';
@@ -120,7 +119,9 @@ initAboutSlider();
 import { initFaq } from './js/FAQ.js';
 initFaq();
 
-
 // Success stories //
 import { fetchStories } from './js/success-stories.js';
 fetchStories();
+
+// open order modal
+import { openOrderModal } from './js/order-modal.js';
