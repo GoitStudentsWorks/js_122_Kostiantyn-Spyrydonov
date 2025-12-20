@@ -20,7 +20,7 @@ const loadMoreBtn = document.querySelector('.js-load-more');
 
 if (filtersEl && petsListEl && loadMoreBtn) {
   let page = 1;
-  let category = '';
+  let categoryId = null;
   const limit = 9;
   let allAnimals = [];
 
@@ -32,9 +32,14 @@ if (filtersEl && petsListEl && loadMoreBtn) {
     loadAnimals(true);
   }
 
+  function showLoader() {
+    petsListEl.innerHTML = '<li>Завантаження...</li>';
+  }
+
   async function loadAnimals(reset = false) {
     try {
-      const data = await fetchAnimals({ page, limit });
+      showLoader();
+      const data = await fetchAnimals({ page, limit, categoryId });
       if (!Array.isArray(data.animals)) {
         petsListEl.innerHTML = '<p>Нічого не знайдено</p>';
         return;
@@ -44,14 +49,10 @@ if (filtersEl && petsListEl && loadMoreBtn) {
       } else {
         allAnimals = [...allAnimals, ...data.animals];
       }
-      let visibleAnimals = allAnimals;
-      if (category) {
-        visibleAnimals = allAnimals.filter(animal =>
-          animal.categories.some(c => c.name === category)
-        );
-      }
-      petsListEl.innerHTML = renderAnimals(visibleAnimals);
-      if (page * limit >= data.totalItems) {
+
+      petsListEl.innerHTML = renderAnimals(allAnimals);
+
+      if (allAnimals.length >= data.totalItems) {
         loadMoreBtn.style.display = 'none';
       } else {
         loadMoreBtn.style.display = 'block';
@@ -68,7 +69,7 @@ if (filtersEl && petsListEl && loadMoreBtn) {
       .querySelectorAll('.filter-btn')
       .forEach(btn => btn.classList.remove('active'));
     e.target.classList.add('active');
-    category = e.target.dataset.category;
+    categoryId = e.target.dataset.categoryId || null;
     page = 1;
     loadAnimals(true);
   });
@@ -106,5 +107,4 @@ import { openOrderModal } from './js/order-modal.js';
 
 // header
 import { initMobileMenu } from './js/header.js';
-
 initMobileMenu();
