@@ -1,4 +1,4 @@
-/* --- Базовые стили шапки --- */
+
 .header-container {
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   fill: #332c22;
 }
 
-/* Скрываем навигацию и десктопную кнопку на мобильных */
+
 .header-nav,
 .header-container .take-pet-button {
   display: none;
@@ -26,13 +26,10 @@
   cursor: pointer;
 }
 
-/* --- Общие стили для Кнопки (и в шапке, и в меню) --- */
 .take-pet-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
-  height: 40px;
   border-radius: 8px;
   border: 1px solid #88765c;
   background: #88765c;
@@ -41,7 +38,10 @@
   font-weight: 400;
   line-height: 1.5;
   text-decoration: none;
-  cursor: pointer;
+  box-sizing: border-box;
+  padding: 8px 20px;
+cursor: pointer;
+  user-select: none;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -56,7 +56,7 @@ background-color: #EEE9E3;
   box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Ссылки навигации --- */
+
 .nav-link {
   font-weight: 400;
   font-size: 16px;
@@ -68,11 +68,14 @@ background-color: #EEE9E3;
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #88765c;
-  border-bottom: 1px solid #443b2e;
+  border-bottom: 1px solid #02060A;
 }
 
-/* --- Мобильное меню (оверлей) --- */
+.nav-link:active {
+  color:#88765c;
+  border-bottom: 1px solid #88765c;
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -82,7 +85,6 @@ background-color: #EEE9E3;
   background-color: #f6f4f1;
   z-index: 999;
 
-  /* Анимация появления */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -134,7 +136,6 @@ body.no-scroll {
   padding: 0;
 }
 
-/* Кнопка внутри мобильного меню */
 .menu-take-wrapper {
   display: flex;
   justify-content: center;
@@ -143,17 +144,13 @@ body.no-scroll {
 .menu-take-wrapper .take-pet-button {
   display: flex;
   width: 100%;
-  /* Растягиваем на всю доступную ширину */
   max-width: 335px;
-  /* Но не больше 335px */
   margin: 0 auto;
 }
 
-/* --- Адаптив: Планшет (от 768px) --- */
 @media screen and (min-width: 768px) {
   .menu-take-wrapper .take-pet-button {
     width: 196px;
-    /* На планшете станет 196px */
   }
 
   .menu-header-ul {
@@ -162,8 +159,6 @@ body.no-scroll {
   }
 }
 
-
-/* --- Адаптив: Десктоп (от 1440px) --- */
 @media screen and (min-width: 1440px) {
   .header-container {
     height: 72px;
@@ -186,7 +181,6 @@ body.no-scroll {
     list-style: none;
   }
 
-  /* Показываем кнопку в основной шапке */
   .header-container .take-pet-button {
     display: flex;
     margin-left: auto;

@@ -1,4 +1,5 @@
 .hero {
+    min-width: 320px;
     max-width: 1440px;
     background-image: url(../img/hero/hero-mob@1x.webp);
     background-repeat: no-repeat;
