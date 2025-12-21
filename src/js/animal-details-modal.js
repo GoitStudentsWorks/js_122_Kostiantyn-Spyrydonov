@@ -59,7 +59,7 @@ function createModalMarkup(animal) {
   `;
 }
 
-content.addEventListener('click', e => {
+backdrop.addEventListener('click', e => {
   if (e.target.closest('[data-modal-close]')) {
     closePetModal();
     return;
