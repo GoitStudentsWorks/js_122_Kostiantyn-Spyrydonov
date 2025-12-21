@@ -15,6 +15,7 @@
   align-items: center;
   padding: 64px 20px;
   z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .modal-backdrop.is-hidden {
@@ -44,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 350ms ease-in-out;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .modal-close-btn:hover {
@@ -107,7 +108,7 @@
   color: #fff;
   font-size: 14px;
   font-weight: 400;
-  transition: background-color, color, 350ms ease-in-out;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .adopt-btn:hover,

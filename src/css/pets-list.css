@@ -39,7 +39,7 @@ button {
   min-height: 41px;
   font-size: 16px;
   line-height: 1.5;
-  transition: all 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .filter-btn:hover,
@@ -129,7 +129,7 @@ button {
   background-color: transparent;
   font-size: 14px;
   line-height: 1.5;
-  transition: all 0.2s ease;
+transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .load-more {
   padding: 12px 24px;
@@ -137,13 +137,13 @@ button {
   border: 1px solid #88765c;
   color: #ffffff;
   font-size: 14px;
-  transition: background-color, color, 350ms ease-in-out;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   background-color: #88765c;
 }
 
 .pet-btn:hover,
 .pet-btn:focus-visible {
-  background-color: #eee9e3;
+  background-color: #C3B49D;
   outline: none;
 }
 .load-more:hover,
