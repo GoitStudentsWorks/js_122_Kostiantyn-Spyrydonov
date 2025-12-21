@@ -17,7 +17,7 @@
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .order-backdrop.is-open {
@@ -55,7 +55,7 @@
 
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 250ms ease;
+transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   background: transparent;
   border: none;
@@ -109,8 +109,7 @@
   background-color: rgba(2, 6, 10, 0.05);
   color: #02060a;
 
-  transition: border-color 250ms ease, background-color 250ms ease,
-    color 250ms ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .order-textarea {
@@ -163,8 +162,7 @@
   color: #ffffff;
 
   cursor: pointer;
-  transition: background-color 250ms ease, border-color 250ms ease,
-    color 250ms ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   outline: none;
   border: none;
 }

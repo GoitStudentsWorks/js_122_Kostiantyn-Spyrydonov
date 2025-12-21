@@ -109,7 +109,7 @@
   color: inherit;
   cursor: pointer;
 
-  transition: opacity 200ms ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .footer__social-icon {
