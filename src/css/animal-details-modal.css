@@ -3,7 +3,7 @@
 }
 
 .modal-content {
-  max-height: 100vh;
+  max-height: max-content;
 }
 
 .modal-backdrop {
@@ -83,6 +83,7 @@
   font-size: 12px;
 }
 
+
 .modal-info h3 {
   font-weight: 600;
   margin-top: 24px;
@@ -136,7 +137,7 @@
     padding-right: 32px;
     border-radius: 8px;
     max-height: 685px;
-    overflow: hidden;
+    overflow: scroll;
   }
 
   .modal-body {
